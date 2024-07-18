@@ -7,7 +7,7 @@ const CategoryList = () => {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    axios.get('http://40.85.98.48:5000/api/categories')
+    axios.get('http://13.79.246.173:5000/api/categories')
       .then(response => {
         setCategories(response.data);
       })

@@ -10,7 +10,7 @@ const AddCategoryForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://40.85.98.48:5000/api/categories', {
+      await axios.post('http://13.79.246.173:5000/api/categories', {
         CategoryName: categoryName,
         Description: description,
         CreatedDate: new Date().toISOString(),
