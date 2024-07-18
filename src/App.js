@@ -1,0 +1,32 @@
+// App.js
+
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import CategoryList from './components/CategoryList';
+import CategoryDetail from './components/CategoryDetail';
+import ProductList from './components/ProductList';
+import AddCategoryForm from './components/AddCategoryForm';
+import AddProductForm from './components/AddProductForm';
+
+const App = () => {
+  return (
+    <Router>
+      <div className="App">
+        <header className="App-header">
+          <h1>Categories and Products Management</h1>
+        </header>
+        <main>
+          <Routes>
+            <Route path="/" element={<CategoryList />} />
+            <Route path="/category/:id" element={<CategoryDetail />} />
+            <Route path="/products/:categoryId" element={<ProductList />} />
+            <Route path="/add-category" element={<AddCategoryForm />} />
+            <Route path="/add-product" element={<AddProductForm />} />
+          </Routes>
+        </main>
+      </div>
+    </Router>
+  );
+};
+
+export default App;
