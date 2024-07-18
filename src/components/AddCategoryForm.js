@@ -16,7 +16,7 @@ const AddCategoryForm = () => {
         CreatedDate: new Date().toISOString(),
         IsActive: true
       });
-      alert('Category added successfully!');
+      alert('Category added successfully...!');
       // Optionally reset form fields or update state after successful submission
       setCategoryName('');
       setDescription('');
