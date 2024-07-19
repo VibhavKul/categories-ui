@@ -12,7 +12,7 @@ const AddProductForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://13.79.246.173:5000/api/products', {
+      await axios.post('http://13.74.99.5:5000/api/products', {
         ProductName: productName,
         CategoryID: categoryId,
         Price: parseFloat(price),

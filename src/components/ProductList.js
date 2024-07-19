@@ -7,7 +7,7 @@ const ProductList = ({ categoryId }) => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    axios.get(`http://13.79.246.173:5000/api/categories/${categoryId}/products`)
+    axios.get(`http://13.74.99.5:5000/api/categories/${categoryId}/products`)
       .then(response => {
         setProducts(response.data);
       })
