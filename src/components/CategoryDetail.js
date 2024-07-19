@@ -7,7 +7,7 @@ const CategoryDetail = ({ categoryId }) => {
   const [category, setCategory] = useState(null);
 
   useEffect(() => {
-    axios.get('http://13.74.99.5:5000/api/categories/${categoryId}')
+    axios.get(`http://13.74.99.5:5000/api/categories/${categoryId}`)
       .then(response => {
         
         setCategory(response.data);
