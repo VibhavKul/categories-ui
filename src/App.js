@@ -14,7 +14,6 @@ const App = () => {
       <div className="App">
         <header className="App-header">
           <h1>Categories and Products Management</h1>
-          <h2>Vibhav's Distributers</h2>
         </header>
         <main>
           <Routes>
