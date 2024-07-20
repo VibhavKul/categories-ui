@@ -16,7 +16,7 @@ const App = () => {
       <div className="App">
         <header className="App-header centered-header">
           <h1>Categories and Products Management</h1>
-          <h2>(A Product by Vibhav's Corporation...!)</h2>
+          <h2>(A Product by Vibhav's Corporation Ltd...!)</h2>
         </header>
         <main>
           <Routes>
