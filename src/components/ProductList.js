@@ -1,33 +1,38 @@
-// ProductList.js
+// src/components/ProductList.js
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+import { getProducts } from '../api';
 
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+const ProductList = () => {
+    const { CategoryID } = useParams();
+    const [products, setProducts] = useState([]);
 
-const ProductList = ({ categoryId }) => {
-  const [products, setProducts] = useState([]);
+    useEffect(() => {
+        const fetchProducts = async () => {
+            try {
+                const data = await getProducts();
+                const filteredProducts = data.filter(product => product.CategoryID === CategoryID);
+                setProducts(filteredProducts);
+            } catch (error) {
+                console.error('Failed to fetch products:', error);
+            }
+        };
 
-  useEffect(() => {
-    axios.get(`https://vibhavkulshrestha.xyz:5000/api/categories/${categoryId}/products`)
-      .then(response => {
-        setProducts(response.data);
-      })
-      .catch(error => {
-        console.error('Error fetching products:', error);
-      });
-  }, [categoryId]);
+        fetchProducts();
+    }, [CategoryID]);
 
-  return (
-    <div>
-      <h2>Products</h2>
-      <ul>
-        {products.map(product => (
-          <li key={product.ProductID}>
-            {product.ProductName} - ${product.Price}
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
+    return (
+        <div>
+            <h2>Product List</h2>
+            <ul>
+                {products.map((product) => (
+                    <li key={product.ProductID}>{product.ProductName}</li>
+                ))}
+            </ul>
+            <Link to="/add-product">Add Product</Link>
+        </div>
+    );
 };
 
 export default ProductList;

@@ -7,12 +7,14 @@ import CategoryDetail from './components/CategoryDetail';
 import ProductList from './components/ProductList';
 import AddCategoryForm from './components/AddCategoryForm';
 import AddProductForm from './components/AddProductForm';
+import './App.css';  // Import the CSS file
+
 
 const App = () => {
   return (
     <Router>
       <div className="App">
-        <header className="App-header">
+        <header className="App-header centered-header">
           <h1>Categories and Products Management</h1>
           <h2>(A Product by Vibhav's Corporation...!)</h2>
         </header>

@@ -1,3 +1,8 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
 .App {
   text-align: center;
 }
@@ -15,7 +20,7 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 20vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,8 +29,45 @@
   color: white;
 }
 
+.centered-header {
+  text-align: center;
+}
+
+.App-header h1 {
+  font-size: 2em;
+  margin: 0;
+}
+
+.App-header h2 {
+  font-size: 1.5em;
+  margin: 10px 0;
+}
+
 .App-link {
   color: #61dafb;
+}
+
+main {
+  padding: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 4px;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+div {
+  margin-bottom: 20px;
 }
 
 @keyframes App-logo-spin {

@@ -1,43 +1,36 @@
-// CategoryDetail.js
+// src/components/CategoryDetail.js
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { getCategoryById } from '../api';
 
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+const CategoryDetail = () => {
+    const { id } = useParams();
+    const [category, setCategory] = useState(null);
 
-const CategoryDetail = ({ categoryId }) => {
-  const [category, setCategory] = useState(null);
+    useEffect(() => {
+        const fetchCategory = async () => {
+            try {
+                const data = await getCategoryById(id);
+                setCategory(data);
+            } catch (error) {
+                console.error('Failed to fetch category:', error);
+            }
+        };
 
-  useEffect(() => {
-    axios.get(`https://vibhavkulshrestha.xyz:5000/api/categories/${categoryId}`)
-      .then(response => {
-        
-        setCategory(response.data);
-      })
-      .catch(error => {
-        console.error('Error fetching category:', error);
-      });
-  }, [categoryId]);
+        fetchCategory();
+    }, [id]);
 
-  if (!category) {
-    return <div>Loading...</div>;
-  }
+    if (!category) {
+        return <div>Loading...</div>;
+    }
 
-  return (
-    <div>
-      <h2>Category Details</h2>
-      <p>
-        <strong>Name:</strong> {category.CategoryName}
-      </p>
-      <p>
-        <strong>Description:</strong> {category.Description}
-      </p>
-      <p>
-        <strong>Created Date:</strong> {category.CreatedDate}
-      </p>
-      <p>
-        <strong>Active:</strong> {category.IsActive ? 'Yes' : 'No'}
-      </p>
-    </div>
-  );
+    return (
+        <div>
+            <h2>Category Detail</h2>
+            <p>ID: {category.CategoryID}</p>
+            <p>Name: {category.CategoryName}</p>
+        </div>
+    );
 };
 
 export default CategoryDetail;
