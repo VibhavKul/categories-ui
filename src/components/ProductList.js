@@ -7,7 +7,7 @@ const ProductList = ({ categoryId }) => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    axios.get(`http://vibhavkulshrestha.xyz:5000/api/categories/${categoryId}/products`)
+    axios.get(`https://vibhavkulshrestha.xyz:5000/api/categories/${categoryId}/products`)
       .then(response => {
         setProducts(response.data);
       })

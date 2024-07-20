@@ -7,7 +7,7 @@ const CategoryDetail = ({ categoryId }) => {
   const [category, setCategory] = useState(null);
 
   useEffect(() => {
-    axios.get(`http://vibhavkulshrestha.xyz:5000/api/categories/${categoryId}`)
+    axios.get(`https://vibhavkulshrestha.xyz:5000/api/categories/${categoryId}`)
       .then(response => {
         
         setCategory(response.data);

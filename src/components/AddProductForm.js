@@ -12,7 +12,7 @@ const AddProductForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://vibhavkulshrestha.xyz:5000/api/products', {
+      await axios.post('https://vibhavkulshrestha.xyz:5000/api/products', {
         ProductName: productName,
         CategoryID: categoryId,
         Price: parseFloat(price),
